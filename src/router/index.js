@@ -5,6 +5,7 @@ import AboutPage from "../components/about";
 import ContactPage from "../components/contact";
 import AbumImg from "../components/abumimg";
 import Post from "../components/post";
+import PostDetail from "../components/postDetail";
 
 Vue.use(VueRouter);
 
@@ -15,24 +16,29 @@ const routes = [
     component: HomePage
   },
   {
-    path: "/gioithieu",
+    path: "/gioi-thieu",
     name: "AboutPage",
     component: AboutPage
   },
   {
-    path: "/lienhe",
+    path: "/lien-he",
     name: "ContactPage",
     component: ContactPage
   },
   {
-    path: "/hinhvemythuatcmc",
+    path: "/abum-anh",
     name: "AbumImg",
     component: AbumImg
   },
   {
-    path: "/tintuc-mythuatcmc",
+    path: "/tin-tuc",
     name: "Post",
     component: Post
+  },
+  {
+    path: "/:id-:name.html",
+    name: "PostDetail",
+    component: PostDetail
   }
 ];
 

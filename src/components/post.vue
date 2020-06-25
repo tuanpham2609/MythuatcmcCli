@@ -43,9 +43,9 @@
                                     <li>cmc mythuat</li>
                                 </ul>
                                 <div class="txt-box-news-page">
-                                    <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'">
+                                    <router-link :to="{name:'PostDetail', params:{id:item.id,name:item.slug}}">
                                         <h4>{{item.name}}</h4>
-                                    </a>
+                                    </router-link>
                                     <ul>
                                         <li>Đăng bởi: Tấn Thanh</li>
                                         <!-- <li>Ngày đăng: {{item.created_at}}</li> -->
@@ -55,13 +55,6 @@
                             </div>
                         </div>
                         <div class="ed-pagination">
-                            <!-- <ul class="pagination setting-ul">
-                            <li class="disabled"><span><i class="fa fa-angle-left"></i></span></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#" rel="next"><i class="fa fa-angle-right"></i></a></li>
-                        </ul> -->
                             <ul class="pagination" v-if="pagination.last_page > 1">
                                 <li v-if="pagination.current_page != 1" class="page-item"><a class="page-link"
                                         @click="getResults(pagination.fist_link)">Previous</a></li>
