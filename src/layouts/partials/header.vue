@@ -82,7 +82,7 @@
 
                             <li>
 
-                                <a href="hinh-ve-cmc">Album ảnh</a>
+                                <a href="abum-anh">Album ảnh</a>
 
                             </li>
 

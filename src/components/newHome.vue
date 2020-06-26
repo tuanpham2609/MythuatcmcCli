@@ -7,12 +7,12 @@
                         <div class="row">
                             <div class="col-sm-6" v-for="(item,index) in data">
                                 <div class="news-box-home">
-                                    <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'" class="pic-news-home">
+                                    <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}" class="pic-news-home">
                                         <img :src="'img/'+item.image" class="img-responsive" :alt="item.name">
-                                    </a>
-                                    <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'">
+                                    </router-link>
+                                    <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}">
                                         <h4>{{item.name}}</h4>
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -70,16 +70,16 @@
                 <div class="row" v-if="postcmc">
                     <div class="col-sm-4" v-for="(item,index) in postcmc">
                         <div class="news-box-home">
-                            <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'" class="pic-news-home">
+                            <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}" class="pic-news-home">
                                 <img :src="'img/'+item.image" class="img-responsive" :title="item.slug" :alt="item.slug">
                                 <!-- <ul>
                                     <li>19</li>
                                     <li>T.7</li>
                                 </ul> -->
-                            </a>
-                            <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'">
+                            </router-link>
+                            <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}">
                                 <h4>{{item.name}}</h4>
-                            </a>
+                            </router-link>
                             <p>{{item.short_content}}</p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
 export default {
     props: ['data','postcmc'],
     updated() {
-        $('.socical-tuan').slick({
+        $('.socical-tuan').not('.slick-initialized').slick({
 
             infinite: true,
 

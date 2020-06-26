@@ -17,13 +17,14 @@
                             <div class="news-highlights">
                                 <h4>Tin tức nổi bật</h4>
                                 <div class="box-news-hl-full" v-if="newPost.length > 0">
-                                    <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'" class="box-news-hl"
-                                        v-for="(item,index) in newPost">
-                                        <div class="ed-img-news-hl">
-                                            <img :src="'img/'+item.image" :alt="item.slug" :title="item.slug">
-                                        </div>
-                                        <p>{{item.short_content}}</p>
-                                    </a>
+                                    <template v-for="(item,index) in newPost">
+                                        <router-link :to="{name:'PostDetail', params:{id:item.id,name:item.slug}}" class="box-news-hl">
+                                            <div class="ed-img-news-hl">
+                                                <img :src="'img/'+item.image" :alt="item.slug" :title="item.slug">
+                                            </div>
+                                            <p>{{item.short_content}}</p>
+                                        </router-link>
+                                    </template>
                                 </div>
                             </div>
                             <div class="pic-advertise-news">
@@ -34,10 +35,10 @@
                     <div class="col-md-9 col-sm-8">
                         <div class="right-news">
                             <div class="box-news-page" v-for="(item, index) in posts">
-                                <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'" class="pic-news-page">
+                                <router-link :to="{name:'PostDetail', params:{id:item.id,name:item.slug}}" class="pic-news-page">
                                     <img :title="item.slug" :alt="item.slug" :src="'img/'+item.image"
                                         class="img-responsive">
-                                </a>
+                                </router-link>
                                 <ul class="date-box-news-page">
                                     <li>#{{index+1}}</li>
                                     <li>cmc mythuat</li>
