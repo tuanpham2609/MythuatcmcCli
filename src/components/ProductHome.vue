@@ -16,17 +16,17 @@
                             <div class="row" style="display: flex; flex-wrap: wrap;">
                                 <div class="col-lg-3 col-md-4 col-sm-6" v-for="(item, index) in postLight">
                                     <div class="box-prod">
-                                        <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'" class="pic-prd">
+                                        <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}" class="pic-prd">
                                             <img :src="'img/'+ item.image" :alt="item.slug" :title="item.slug">
-                                        </a>
+                                        </router-link>
                                         <div class="txt-prd">
-                                            <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'">
+                                            <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}">
                                                 <h4>{{item.name}}</h4>
-                                            </a>
-                                            <p> {{item.short_content}}
-                                            </p>
-                                            <a :href="'tin-tuc/'+item.id+'/'+item.slug+'.html'"
-                                                class="btn btn-default btn-tuan">Xem thêm</a>
+                                            </router-link>
+                                            <p> {{item.short_content}}</p>
+                                            <router-link :to="{name:'PostDetail', params:{id:item.id, name:item.slug}}" class="btn btn-default btn-tuan">
+                                               Xem thêm
+                                            </router-link>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                         </a>
                     </div>
                 </template>
-                <div class="col-sm-12 text-center"><a href="hinh-ve-cmc" class="btn btn-default btn-tuan">Xem thêm
+                <div class="col-sm-12 text-center"><a href="abu,-anh" class="btn btn-default btn-tuan">Xem thêm
                         album</a></div>
             </div>
         </div>
