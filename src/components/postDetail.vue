@@ -42,7 +42,7 @@
                                         <div class="items-3" v-for="(item, index) in newsposts" :key="index"> 
                                             <div class="news-box-home">
                                                 <router-link :to="{name:'PostDetail', params:{id:item.id,name:item.slug}}" class="pic-news-home">
-                                                    <img :src="'img'+'/'+item.image" class="img-responsive"
+                                                    <img v-if="item.image" :src="'img'+'/'+item.image" class="img-responsive"
                                                         :alt="item.slug" :title="item.slug">
                                                 </router-link>
                                                 <router-link :to="{name:'PostDetail', params:{id:item.id,name:item.slug}}">
@@ -89,7 +89,7 @@
         updated() {
             if($(".regular3").length){
                 let slider = $(".regular3");
-                slider.slick({
+                slider.not('.slick-initialized').slick({
 
                     dots: false,
 
